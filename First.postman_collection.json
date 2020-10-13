@@ -1,0 +1,62 @@
+{
+	"info": {
+		"_postman_id": "214d2d65-a38c-4bb5-af03-85af29118fcc",
+		"name": "New",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "IP",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"property\": [\r\n        \"Sites\"\r\n    ],\r\n    \"report_type\": [\r\n        \"Buildings\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ip.jsontest.com",
+					"protocol": "http",
+					"host": [
+						"ip",
+						"jsontest",
+						"com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "IP.json",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"property\": [\r\n        \"Sites\"\r\n    ],\r\n    \"report_type\": [\r\n        \"ALL\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ip.jsontest.com",
+					"protocol": "http",
+					"host": [
+						"ip",
+						"jsontest",
+						"com"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
