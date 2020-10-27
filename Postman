@@ -1,0 +1,19 @@
+node('master') {
+  stage('Build') {
+    echo 'make'
+  }
+  stage('SCM Checkout') {
+    echo 'QA'
+    git 'https://github.com/mohith418/Postman.git'
+  }
+  
+ stage('Test') {
+ bat 'copy C:\\Users\\mohit\\.jenkins\\workspace\\First_postman\\First.postman_collection.json F:\\Postman\\Test'   
+ bat 'cd F:\\Postman\\Test'
+ bat 'newman run F:\\Postman\\Test\\First.postman_collection.json'
+   }
+ 
+  stage('Deploy') {
+    echo 'make publish'
+  }
+}
