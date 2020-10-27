@@ -1,19 +1,31 @@
-node('master') {
-  stage('Build') {
+pipeline { 
+    agent any 
+    options {
+        skipStagesAfterUnstable()
+    }
+    stages {
+    stage('Build') {
+    steps {
     echo 'make'
-  }
+        }
+      }
   stage('SCM Checkout') {
+   steps {
     echo 'QA'
     git 'https://github.com/mohith418/Postman.git'
-  }
-  
+      }
+    }
  stage('Test') {
+ steps {
  bat 'copy C:\\Users\\mohit\\.jenkins\\workspace\\First_postman\\First.postman_collection.json F:\\Postman\\Test'   
  bat 'cd F:\\Postman\\Test'
  bat 'newman run F:\\Postman\\Test\\First.postman_collection.json'
    }
- 
+ }
   stage('Deploy') {
-    echo 'make publish'
+  steps {
+  echo 'make publish'
   }
+  }
+}
 }
